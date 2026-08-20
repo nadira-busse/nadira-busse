@@ -71,5 +71,4 @@ I have built most of my experience through independent projects, and I am contin
 
 My next step is to develop this work inside an organisation: contributing to existing systems, working with other engineers, learning from technical review and production constraints, and helping improve workflows that are unnecessarily complex or manual.
 
-Over time, I want to grow from building individual AI and automation solutions into designing the systems and architecture that connect them.
 
