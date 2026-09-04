@@ -1,12 +1,12 @@
 # Hi, I'm Nadira
 
-I started building AI and workflow systems because I kept running into problems that the tools available at the time did not solve well enough.
+I started building AI and workflow systems because I kept running into problems that the tools I was using did not solve well enough.
 
 I wanted to understand why context disappeared, why AI output could be wrong or incomplete, where a workflow actually failed, and which parts of a system should remain deterministic instead of being delegated to AI. Building my own systems became the way I learned to answer those questions.
 
 I use AI as part of how I build, but not as a substitute for understanding what I ship. I test behaviour, examine assumptions, investigate failures and document where a system stops.
 
-I am currently looking for a junior or junior+ role where AI engineering, workflow automation and software development come together.
+My current focus is on software development, AI systems, workflow automation, context and retrieval, and governance.
 
 ## Featured projects
 
@@ -14,61 +14,42 @@ I am currently looking for a junior or junior+ role where AI engineering, workfl
 
 A Python governance engine that evaluates proposed AI-agent tool calls as `ALLOW`, `BLOCK` or `FLAG` before execution.
 
-The engine separates deterministic policy rules from optional semantic retrieval and LLM reasoning, with explicit fallback behaviour and audit logging.
+Explicit policy rules and approval checks are evaluated first. Retrieval and LLM reasoning are optional review paths for uncovered tools and cannot authorize a tool that is not covered by policy.
 
 **Built with:** Python · ChromaDB · Mistral · OpenAI · policy evaluation · retrieval · testing · CI
 
 ### [Weft](https://github.com/nadira-busse/weft)
 
-An archive-first, platform-independent reference implementation for preserving AI conversations, decisions and workflow output as structured records that can be retrieved across different AI clients.
+An archive-first reference implementation for preserving AI conversations, decisions and workflow output as structured records that can be retrieved across different AI clients.
 
-I built Weft after repeatedly losing useful project context between sessions and platforms. It lets me archive a conversation once and retrieve that context later from both ChatGPT and Claude through the same underlying system, instead of depending on the memory or history of one interface.
+I built Weft after repeatedly losing useful project context between sessions and platforms. It lets me archive context outside the AI client itself and retrieve it later from different AI environments through the same underlying system, instead of depending on the memory or history of one interface.
 
-The repository includes the Make workflows, Notion data model, MCP-facing contracts, installer, JSON Schemas, regression evidence and reproducible setup.
+Make handles orchestration, Notion acts as the human-readable source of record and MCP exposes archive, search and context retrieval to different AI clients. The repository also includes public contracts, JSON Schemas, idempotent archive flows, a Python installer, regression evidence and reproducible setup.
 
-**Built with:** Python · Make · Notion · MCP · JSON Schema · platform-independent context retrieval · idempotency · installer testing
+**Built with:** Python · Make · Notion · MCP · JSON Schema · context retrieval · idempotency · installer testing
 
 ### [Kelvior Agent Decision Gate](https://github.com/nadira-busse/kelvior-agent-decision-gate)
 
-A Microsoft Foundry reasoning-agent MVP that evaluates whether another AI agent is ready for deployment.
+A Microsoft Foundry reasoning-agent MVP that uses evidence from Foundry IQ to assess the deployment readiness of another AI agent.
 
-It retrieves synthetic enterprise evidence, applies blocking rules and score caps, traces findings back to their sources, and preserves human authority over the final deployment decision.
+The assessment covers five audit domains and produces `GO`, `CONDITIONAL GO`, `REMEDIATE` or `BLOCK`. Foundry IQ grounding, source traceability, blocking rules and score caps make the assessment inspectable, while the final deployment decision remains with a human reviewer.
 
 **Built with:** Microsoft Foundry · Foundry IQ · retrieval · synthetic enterprise evidence · governance rules · source traceability
 
 ### [Fenéla](https://github.com/nadira-busse/fenela)
 
-An accountability PWA that helps someone turn one personal goal into a small action and return to it without turning the product into an AI planner or productivity suite.
+An accountability PWA that turns one personal goal into small, concrete actions and keeps one step at a time in focus.
 
-AI is deliberately bounded to optional anchor suggestions. Account-owned state, reminders and reflections use explicit server-side and deterministic boundaries where appropriate.
+AI has one deliberately bounded role: it can suggest anchors when the user asks for help, but the user decides what is kept. Account-owned state, reminders and reflections remain outside the generative AI layer.
 
-**Built with:** TypeScript · Next.js · React · Supabase · OpenAI · Web Push · testing · CI
+The application uses Supabase Auth and PostgreSQL for authenticated user-owned persistence, Web Push for optional reminders, deterministic reflections from recorded activity, and validation, repair and fallback boundaries around AI-generated suggestions.
 
-## Technical focus
-
-**Core:** Python · TypeScript · AI systems · workflow automation · retrieval · APIs · testing
-
-**Working with:** Next.js · React · Make · Microsoft Foundry · MCP · JSON Schema · CI
+**Built with:** TypeScript · Next.js · React · Supabase · PostgreSQL · OpenAI · Web Push · testing · CI
 
 ## How I work
 
-The part of engineering I am most interested in is not getting a demo to work once. It is understanding why it works, where it can fail, what should remain deterministic, and how to make the system simpler, clearer and easier to maintain.
+I start by defining what a system needs to do, which responsibilities should stay separate, and where the boundaries belong. From there, I design the workflow, information flow and automation around those decisions.
 
-I often notice when a workflow is more complicated or manual than it needs to be. I like finding ways to simplify it with clearer steps, better information flow and automation where it actually helps.
+I make important system behaviour explicit through clear logic, ownership and interfaces, so the system remains understandable and easier to test and maintain.
 
-Across my projects I have worked with:
-
-* deterministic rules around probabilistic AI behaviour;
-* explicit system and ownership boundaries;
-* idempotency and failure recovery;
-* schemas and payload contracts;
-* retrieval and context systems;
-* testing and regression evidence;
-* security and privacy boundaries;
-* reproducible setup and technical documentation.
-
-I have built most of my experience through independent projects, and I am continuing to deepen the software-engineering foundations behind the systems I build through formal study and hands-on work.
-
-My next step is to develop this work inside an organisation: contributing to existing systems, working with other engineers, learning from technical review and production constraints, and helping improve workflows that are unnecessarily complex or manual.
-
-
+Most of my technical experience has been built through independent projects. I am continuing to strengthen the software-engineering foundations behind that work through hands-on development and formal study in Applied Computer Science.
