@@ -10,14 +10,6 @@ My current focus is on software development, AI systems, workflow automation, co
 
 ## Featured projects
 
-### [Threshia Governance](https://github.com/nadira-busse/threshia-governance)
-
-A Python governance engine that evaluates proposed AI-agent tool calls as `ALLOW`, `BLOCK` or `FLAG` before execution.
-
-Explicit policy rules and approval checks are evaluated first. Retrieval and LLM reasoning are optional review paths for uncovered tools and cannot authorize a tool that is not covered by policy.
-
-**Built with:** Python · ChromaDB · Mistral · OpenAI · policy evaluation · retrieval · testing · CI
-
 ### [Weft](https://github.com/nadira-busse/weft)
 
 An archive-first reference implementation for preserving AI conversations, decisions and workflow output as structured records that can be retrieved across different AI clients.
@@ -27,14 +19,6 @@ I built Weft after repeatedly losing useful project context between sessions and
 Make handles orchestration, Notion acts as the human-readable source of record and MCP exposes archive, search and context retrieval to different AI clients. The repository also includes public contracts, JSON Schemas, idempotent archive flows, a Python installer, regression evidence and reproducible setup.
 
 **Built with:** Python · Make · Notion · MCP · JSON Schema · context retrieval · idempotency · installer testing
-
-### [Kelvior Agent Decision Gate](https://github.com/nadira-busse/kelvior-agent-decision-gate)
-
-A Microsoft Foundry reasoning-agent MVP that uses evidence from Foundry IQ to assess the deployment readiness of another AI agent.
-
-The assessment covers five audit domains and produces `GO`, `CONDITIONAL GO`, `REMEDIATE` or `BLOCK`. Foundry IQ grounding, source traceability, blocking rules and score caps make the assessment inspectable, while the final deployment decision remains with a human reviewer.
-
-**Built with:** Microsoft Foundry · Foundry IQ · retrieval · synthetic enterprise evidence · governance rules · source traceability
 
 ### [Fenéla](https://github.com/nadira-busse/fenela)
 
